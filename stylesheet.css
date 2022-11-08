@@ -1,0 +1,54 @@
+@font-face {
+  font-family: poppins;
+  src: url();
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+body {
+  margin-top: 10px;
+  background-image: url("https://www.acprail.com/wp-content/uploads/2018/10/narvik-abisko-1.jpg");
+  background-size: cover;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  position: absolute;
+  margin-top: 190px;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.232),
+    rgba(123, 123, 123, 0.358),
+    rgba(255, 255, 255, 0.358)
+  );
+  text-align: center;
+  border-radius: 1rem;
+  width: max-content;
+  padding: 40px;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 6.3rem;
+  font-weight: 700;
+  color: rgba(186, 166, 216, 0.248);
+}
+
+h2 {
+  font-weight: 600;
+  /* color: rgb(194, 219, 229); */
+}
+
+.temperature {
+  font-weight: bold;
+}
+
+.description {
+  font-weight: bold;
+  text-transform: capitalize;
+}
