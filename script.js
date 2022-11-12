@@ -21,9 +21,9 @@ fetchLocation();
 
 // C O D E   F O R   D O I N G   A   R E Q U E S T
 //Fetch weather for a location
-function fetchWeather(coords) {
-  const latitude = coords[0].lat;
-  const longitude = coords[0].lon;
+function fetchWeather(coordinates) {
+  const latitude = coordinates[0].lat;
+  const longitude = coordinates[0].lon;
 
   /*unit parameter in API call as Kelvin is used by default.
     Metric could be changed to imperial for Fahrenheit*/
