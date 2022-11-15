@@ -2,7 +2,7 @@ let apiKey = "466ef4685d34153b24ce25e39f641f6a";
 
 // C O D E   F O R   D O I N G   A   R E Q U E S T
 //Fetch coordinates for a location
-function fetchLocation() {
+async function fetchLocation() {
   let city = "abisko";
   let url =
     "http://api.openweathermap.org/geo/1.0/direct?q=" +
@@ -10,9 +10,17 @@ function fetchLocation() {
     "&limit=1&appid=" +
     apiKey;
 
-  fetch(url)
+  await fetch(url) //We call fetch
     //The then() method returns a Promise.
-    .then((response) => response.json()) //Returns data as a JSON Object
+    .then((response) => response.json())
+    /*
+    We handle the sucess case with .then,
+    we get the response from below which returns data that 
+    we need to convert to JSON.
+    response.json returns a promise. We can chain on a .then
+    to handle that promise. Then we get the actual data and
+    we use that (parameter) in our featchWeather.
+    */
     .then((data) => fetchWeather(data));
 }
 
@@ -21,7 +29,7 @@ fetchLocation();
 
 // C O D E   F O R   D O I N G   A   R E Q U E S T
 //Fetch weather for a location
-function fetchWeather(coordinates) {
+async function fetchWeather(coordinates) {
   const latitude = coordinates[0].lat;
   const longitude = coordinates[0].lon;
 
@@ -37,7 +45,7 @@ function fetchWeather(coordinates) {
     "&appid=" +
     apiKey;
 
-  fetch(url)
+  await fetch(url)
     .then((response) => response.json())
     .then((data) => renderWeather(data));
 }
